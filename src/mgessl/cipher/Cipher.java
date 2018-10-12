@@ -3,7 +3,7 @@ package mgessl.cipher;
 /**
  * Interface für die Klassen encrypt und decrypt
  * @author micha
- * @version 11.10.28
+ * @version 12.10.28
  */
 public interface Cipher {
 	/**

@@ -3,7 +3,7 @@ package mgessl.cipher;
 /**
  * Klasse erbt von Interface Cipher. Die Klasse implementiert Klassen zum verschlüsseln von Texten
  * @author micha
- * @version 11.10.28
+ * @version 12.10.28
  */
 public class MonoAlphabeticCipher implements Cipher{
 	private String secretAlphabet;
@@ -24,14 +24,13 @@ public class MonoAlphabeticCipher implements Cipher{
 	 * @param text
 	 * @return boolean
 	 */
-	protected boolean setSecretAlphabet(String text){
+	protected void setSecretAlphabet(String text){
 		if (text.length()==30){
 			for (int i=0;i<text.length();i++) {
 				for (int j=0; j<text.length();j++) {
 					if(i != j) {
 						if(text.charAt(j) == text.charAt(i)) {
 							System.out.println("Ein Buchstabe ist doppelt");
-							return false;
 						}
 					}
 					
@@ -40,15 +39,12 @@ public class MonoAlphabeticCipher implements Cipher{
 			for(int i = 0;i<alphabet.length();i++) {
 				if(text.indexOf(alphabet.charAt(i))==-1) {
 					System.out.println("Ein Buchstabe ist nicht erlaubt");
-					return false;
 				}
 			}
 		} else {
 			System.out.println("Buchstaben fehlen");
-			return false;
 		}
 		this.secretAlphabet=text;
-		return true;
 	}
 	
 	/**
