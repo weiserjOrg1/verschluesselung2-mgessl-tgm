@@ -8,9 +8,7 @@ package mgessl.cipher;
 public class SubstitutionCipher extends MonoAlphabeticCipher{
 	public SubstitutionCipher(String secretAlphabet){
 		setSecretAlphabet(secretAlphabet);
-		String text = this.encrypt("MichaelGessl");
-		System.out.println(text);
-		System.out.println(this.decrypt(text));
+		
 		
 	}
 	/**
@@ -23,5 +21,8 @@ public class SubstitutionCipher extends MonoAlphabeticCipher{
 	}
 	public static void main(String[] args) {
 		SubstitutionCipher sC = new SubstitutionCipher("QWERTZUIOPÜASDFGHJKLÖÄYXCVBNMß");
+		String text = sC.encrypt("MichaelGessl");
+		System.out.println(text);
+		System.out.println(sC.decrypt(text));
 	}
 }

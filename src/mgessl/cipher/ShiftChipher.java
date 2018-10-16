@@ -7,8 +7,17 @@ package mgessl.cipher;
 public class ShiftChipher extends MonoAlphabeticCipher{
 	private int ShiftValue;
 	public ShiftChipher(int inumb) {
+		String s="ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜß";
+		String ausgabe="";
 		setShiftValue(inumb);
-		
+		for (int i=0; i<30; i++) {
+			if (i+inumb<30) {
+				ausgabe = ausgabe + s.charAt(inumb+i);
+			} else {
+				ausgabe= ausgabe +s.charAt(inumb+i-30);
+			}
+		}
+		super.setSecretAlphabet(ausgabe);
 	}
 	public void setShiftValue(int inumb) {
 		if (inumb>0 && inumb<30) {
@@ -19,5 +28,8 @@ public class ShiftChipher extends MonoAlphabeticCipher{
 	}
 	public static void main(String[] args) {
 		ShiftChipher sC=new ShiftChipher(4);
+		String text = sC.encrypt("MichaelGessl");
+		System.out.println(text);
+		System.out.println(sC.decrypt(text));
 	}
 }
