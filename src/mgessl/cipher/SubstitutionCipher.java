@@ -8,13 +8,10 @@ package mgessl.cipher;
 public class SubstitutionCipher extends MonoAlphabeticCipher{
 	public SubstitutionCipher(String secretAlphabet){
 		setSecretAlphabet(secretAlphabet);
-		
-		
 	}
 	/**
 	 * Set für das SecretAlphabet
 	 * @param text
-	 * @return boolean
 	 */
 	public void setSecretAlphabet(String secretAlphabet){
 		super.setSecretAlphabet(secretAlphabet);

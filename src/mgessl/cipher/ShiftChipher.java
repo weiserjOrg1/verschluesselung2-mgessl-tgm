@@ -1,8 +1,8 @@
 package mgessl.cipher;
 /**
- * 
+ * Verschlüüselt nach Cesar-Methode
  * @author micha
- * @version12.12.2018
+ * @version 12.10.2018
  */
 public class ShiftChipher extends MonoAlphabeticCipher{
 	private int ShiftValue;
@@ -19,6 +19,10 @@ public class ShiftChipher extends MonoAlphabeticCipher{
 		}
 		super.setSecretAlphabet(ausgabe);
 	}
+	/**
+	 * Set für das SecretAlphabet
+	 * @param inumb
+	 */
 	public void setShiftValue(int inumb) {
 		if (inumb>0 && inumb<30) {
 			this.ShiftValue=inumb;

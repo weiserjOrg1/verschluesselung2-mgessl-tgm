@@ -22,7 +22,6 @@ public class MonoAlphabeticCipher implements Cipher{
 	/**
 	 * Set für das SecretAlphabet
 	 * @param text
-	 * @return boolean
 	 */
 	protected void setSecretAlphabet(String text){
 		if (text.length()==30){
