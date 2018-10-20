@@ -16,6 +16,7 @@ public interface Cipher {
 	 * Entschlüsselt einen text
 	 * @param text zum entschlüsseln
 	 * @return String
+	 * 
 	 */
 	public String decrypt(String text);
 }
